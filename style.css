@@ -19,7 +19,7 @@ ul {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: palegreen;
+    background: rgb(24, 24, 24);
 }
 
 .list-item {
