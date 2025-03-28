@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: palegreen;
+}
+
+.list-item {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.list-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+}
+
+.list-item.item-1::after {
+    background: blueviolet;
+}
+
+.list-item.item-2::after {
+    background: goldenrod;
+}
+
+.list-item.item-3::after {
+    background: teal;
+}
+
+
+.list-item>svg {
+    --items-size: 20px;
+    width: var(--items-size);
+    height: var(--items-size);
+    color: rgb(59, 59, 59);
+}
+
+.drag-with {
+    will-change: transform;
+    cursor: move;
+}
+
+.drag-with .not-draggable {
+    cursor: default;
+}
+
+.list-item.is-idle {
+    transition: 0.25s ease transform;
+}
+
+.drag-with.is-draggable,
+.drag-with.is-draggable .drag-handle {
+    cursor: grabbing;
+}
+
+.list-item.is-draggable {
+    z-index: 10;
+}
